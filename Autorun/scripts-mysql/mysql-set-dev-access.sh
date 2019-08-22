@@ -9,9 +9,9 @@ case "$response" in
             exit 1
             ;;
     esac
-passroot='test'
-passtest='test'
-db='skill_test'
+passroot=''
+passtest=''
+db=''
 echo "create database test;" | mysql -uroot -p${passroot}
 echo "DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1');" | mysql -uroot -p${passroot}
 echo "create user 'test'@'172.30.0.3' identified by '${passtest}';" | mysql -uroot -p${passroot}
