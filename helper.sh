@@ -20,6 +20,7 @@ case "$response" in
 if [ -f "$file" ]
 then
 
+    . Autorun/sh/check-env.sh
 
     if [ "$env" = "" ]
         then

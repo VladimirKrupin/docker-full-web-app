@@ -39,8 +39,8 @@ services:
   dev_docker_mysql:
     image: mysql:5.7
     environment:
-      - MYSQL_ROOT_PASSWORD=
-      - MYSQL_DATABASE=
+      - MYSQL_ROOT_PASSWORD=test
+      - MYSQL_DATABASE=skill_test
     networks:
       skillnetworkdev:
         ipv4_address: 172.30.0.4

@@ -38,8 +38,8 @@ services:
   docker_mysql:
     image: mysql:5.7
     environment:
-      - MYSQL_ROOT_PASSWORD=
-      - MYSQL_DATABASE=
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=skill
     networks:
       skillenetwork:
         ipv4_address: 172.20.0.4

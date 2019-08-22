@@ -3,10 +3,9 @@ import Router from 'vue-router'
 // Containers
 const DefaultContainer = () => import('@/containers/DefaultContainer');
 
-const Files = () => import('@/views/files/Files');
-const Profile = () => import('@/views/profile/Profile');
 const Login = () => import('@/views/login/Login');
 const MainPage = () => import('@/views/mainPage/MainPage');
+const Profile = () => import('@/views/profile/Profile');
 
 //main
 
@@ -18,26 +17,25 @@ export default new Router({
     {
       path: '/',
       name: 'Home',
+      redirect: '/main',
       component: DefaultContainer,
       children: [
         {
-          path: 'profile',
+          path: '/main',
+          name: 'MainPage',
+          component: MainPage,
+        },
+        {
+          path: '/profile',
           name: 'Profile',
           component: Profile,
-          meta: {
-            requiresAuth: true
-          },
         },
-      ]
-    },
-    {
-      path: '/main',
-      name: 'MainPage',
-      component: MainPage,
+      ],
       meta: {
-        requiresAuth: false
-      },
+        requiresAuth: true
+      }
     },
+
     {
       path: '/login',
       name: 'Login',
